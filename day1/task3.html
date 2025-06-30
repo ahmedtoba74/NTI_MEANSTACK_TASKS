@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Users Table</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                margin: 20px auto;
+                width: 60%;
+                font-family: Arial, sans-serif;
+            }
+            th,
+            td {
+                border: 1px solid #444;
+                padding: 10px;
+                text-align: center;
+            }
+            th {
+                background-color: #eee;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="output"></div>
+
+        <script>
+            // Get a valid number from user
+            let count;
+            do {
+                count = prompt("How many users do you want to enter?");
+            } while (isNaN(count) || count.trim() === "" || Number(count) <= 0);
+            count = Number(count);
+
+            const users = [];
+
+            // Get user info one by one
+            for (let i = 0; i < count; i++) {
+                let name, age;
+
+                // Validate name (length > 3 && < 10)
+                do {
+                    name = prompt(
+                        `Enter name for user ${i + 1} (4-9 characters):`
+                    );
+                } while (!name || name.length <= 3 || name.length >= 10);
+
+                // Validate age (between 11 and 59)
+                do {
+                    age = prompt(`Enter age for user ${i + 1} (11 - 59):`);
+                } while (isNaN(age) || Number(age) <= 10 || Number(age) >= 60);
+
+                users.push({ name, age: Number(age) });
+            }
+
+            // Generate HTML table
+            let tableHTML = `
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+            users.forEach((user, index) => {
+                tableHTML += `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${user.name}</td>
+          <td>${user.age}</td>
+        </tr>
+      `;
+            });
+
+            tableHTML += `</tbody></table>`;
+
+            document.getElementById("output").innerHTML = tableHTML;
+        </script>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Event Object Examples</title>
+        <style>
+            body {
+                font-family: Arial;
+                padding: 30px;
+            }
+            input {
+                padding: 10px;
+                margin-bottom: 15px;
+                width: 250px;
+                font-size: 14px;
+            }
+            img.eye {
+                width: 20px;
+                vertical-align: middle;
+                cursor: pointer;
+                margin-left: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>1. Key Press Detection</h2>
+        <p>Type in this field to see the ASCII code and modifier keys:</p>
+        <input type="text" onkeydown="detectKey(event)" />
+
+        <h2>2. Numbers Only Input</h2>
+        <p>This input allows only numbers (0-9):</p>
+        <input type="text" onkeypress="allowOnlyNumbers(event)" />
+
+        <h2>3. Password with Eye Toggle</h2>
+        <p>Click the eye to show/hide password:</p>
+        <input type="password" id="myPass" />
+        <img
+            id="eyeIcon"
+            class="eye"
+            src="https://cdn-icons-png.flaticon.com/512/709/709612.png"
+            onclick="togglePassword()"
+        />
+
+        <script>
+            // 1. Detect key press and show info
+            function detectKey(e) {
+                alert(
+                    `Key: ${e.key}\nASCII Code: ${e.keyCode || e.which}\n` +
+                        `Alt: ${e.altKey}\nCtrl: ${e.ctrlKey}\nShift: ${e.shiftKey}`
+                );
+            }
+
+            // 2. Allow only numbers
+            function allowOnlyNumbers(e) {
+                const charCode = e.which || e.keyCode;
+                if (charCode < 48 || charCode > 57) {
+                    e.preventDefault();
+                }
+            }
+
+            // 3. Toggle password visibility
+            function togglePassword() {
+                const pass = document.getElementById("myPass");
+                const icon = document.getElementById("eyeIcon");
+
+                if (pass.type === "password") {
+                    pass.type = "text";
+                    icon.src =
+                        "https://cdn-icons-png.flaticon.com/512/709/709612.png"; // open eye
+                } else {
+                    pass.type = "password";
+                    icon.src =
+                        "https://cdn-icons-png.flaticon.com/512/709/709500.png"; // closed eye
+                }
+            }
+        </script>
+    </body>
+</html>

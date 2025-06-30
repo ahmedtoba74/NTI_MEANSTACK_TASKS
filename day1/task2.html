@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Birth Date Validation Loop</title>
+    </head>
+    <body>
+        <script>
+            function isValidDateFormat(dateStr) {
+                const regex = /^\d{2}-\d{2}-\d{4}$/;
+                return dateStr.length === 10 && regex.test(dateStr);
+            }
+            function formatDate(dateStr) {
+                const [dayStr, monthStr, yearStr] = dateStr.split("-");
+                const day = parseInt(dayStr, 10);
+                const month = parseInt(monthStr, 10) - 1;
+                const year = parseInt(yearStr, 10);
+
+                const dateObj = new Date(year, month, day);
+
+                const formatted = dateObj.toLocaleDateString("en-GB", {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric",
+                });
+
+                return formatted.replace(/ /g, "/");
+            }
+
+            let userInput;
+            do {
+                userInput = prompt(
+                    "📅 Enter your birth date in the format DD-MM-YYYY (e.g. 30-06-2025):"
+                );
+            } while (!isValidDateFormat(userInput));
+
+            const finalDate = formatDate(userInput);
+            alert("✅ Your birth date is: " + finalDate);
+        </script>
+    </body>
+</html>

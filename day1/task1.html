@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Date Day Finder</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 40px;
+                background-color: #f0f0f0;
+            }
+            .container {
+                max-width: 400px;
+                margin: auto;
+                background: #fff;
+                padding: 20px;
+                text-align: center;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            input {
+                padding: 10px;
+                font-size: 16px;
+                margin-bottom: 15px;
+                width: 100%;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            #output {
+                margin-top: 20px;
+                font-size: 20px;
+                color: #333;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Date to Day Name</h2>
+            <input type="date" id="dateInput" />
+            <button onclick="showDayName()">Get Day</button>
+            <div id="output"></div>
+        </div>
+
+        <script>
+            function getDayName(dateString) {
+                const date = new Date(dateString);
+                const days = [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                ];
+                return days[date.getDay()];
+            }
+
+            function showDayName() {
+                const input = document.getElementById("dateInput").value;
+                if (!input) {
+                    document.getElementById("output").textContent =
+                        "Please select a date.";
+                    return;
+                }
+                const dayName = getDayName(input);
+                document.getElementById("output").textContent =
+                    "Day: " + dayName;
+            }
+        </script>
+    </body>
+</html>
