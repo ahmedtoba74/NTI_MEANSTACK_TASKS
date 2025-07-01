@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Fetch Card Example</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+                text-align: center;
+            }
+
+            button {
+                margin: 10px;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .card {
+                width: 300px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                padding: 15px;
+                margin: 20px auto;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                text-align: left;
+            }
+
+            .card h3 {
+                margin-top: 0;
+                font-size: 20px;
+                color: #333;
+            }
+
+            .card p {
+                font-size: 16px;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Fetch Example</h1>
+        <button onclick="getMethod()">Get Method</button>
+        <button onclick="postMethod()">Post Method</button>
+
+        <div id="card"></div>
+
+        <script>
+            function renderCard(data) {
+                const card = document.createElement("div");
+                card.className = "card";
+                card.innerHTML = `
+                <h2>ID: ${data.id}</h2>
+                <h3>${data.title}</h3>
+                <p>${data.body}</p>
+            `;
+                return card;
+            }
+
+            function getMethod() {
+                fetch("https://jsonplaceholder.typicode.com/posts?_limit=5")
+                    .then((res) => res.json())
+                    .then((posts) => {
+                        const container = document.getElementById("card");
+                        container.innerHTML = ""; // امسح الكروت القديمة
+
+                        posts.forEach((data) => {
+                            const card = renderCard(data);
+                            container.appendChild(card);
+                        });
+                    })
+                    .catch((err) => console.error("GET error:", err));
+            }
+
+            function postMethod() {
+                fetch("https://jsonplaceholder.typicode.com/posts", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        title: "Test Title",
+                        body: "This is a test post body.",
+                        userId: 1,
+                    }),
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        const container = document.getElementById("card");
+                        container.innerHTML = "";
+                        const card = renderCard(data);
+                        container.appendChild(card);
+                    })
+                    .catch((err) => console.error("POST error:", err));
+            }
+        </script>
+    </body>
+</html>
