@@ -11,8 +11,9 @@ Each day has its own folder, containing the relevant tasks in HTML, CSS, and Jav
 
 - [Day01](day1/) – Basic HTML structure + JS events
 - [Day02](day2/) – Calculator + Event object + Password toggle
-- [Day03](day3) – Fetch API (GET + POST) with card display
-- `Day04/` – *(Coming soon...)*
+- [Day03](day3/) – Fetch API (GET + POST) with card display
+- [Day04](day4/) – OOP with JavaScript (Encapsulation, Abstract, inheritance, polymorphism) + ES6 modules (Shapes: Rectangle, Square, Circle)
+- `Day05/` – *(Coming soon...)*
 
 ## 📌 Notes
 - Each task is self-contained.
