@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Pure DOM Styling</title>
+    </head>
+    <body>
+        <div class="top-right">
+            <img src="dom.jpg" alt="Top right image" />
+        </div>
+        <div class="bottom-left">
+            <img src="dom.jpg" alt="Bottom left image" />
+        </div>
+        <div class="center">
+            <ul id="nav">
+                <li><strong>Memo</strong></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">Photos</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Clients</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <script>
+            document.body.style.margin = "0";
+            document.body.style.padding = "0";
+            const topRight = document.querySelector(".top-right");
+            topRight.style.position = "absolute";
+            topRight.style.top = "20px";
+            topRight.style.right = "20px";
+
+            const bottomLeft = document.querySelector(".bottom-left");
+            bottomLeft.style.position = "absolute";
+            bottomLeft.style.bottom = "20px";
+            bottomLeft.style.left = "20px";
+
+            const center = document.querySelector(".center");
+            center.style.position = "absolute";
+            center.style.top = "50%";
+            center.style.left = "50%";
+            center.style.transform = "translate(-50%, -50%)";
+            center.style.textAlign = "center";
+
+            const nav = document.getElementById("nav");
+            nav.style.listStyle = "circle";
+            nav.style.padding = "0";
+            nav.style.margin = "0";
+
+            const listItems = document.querySelectorAll("#nav li");
+            listItems.forEach((li) => {
+                li.style.margin = "5px 0";
+            });
+
+            const links = document.querySelectorAll("#nav a");
+            links.forEach((a) => {
+                a.style.color = "blue";
+            });
+
+            const strong = document.querySelector("#nav strong");
+            strong.style.color = "black";
+        </script>
+    </body>
+</html>

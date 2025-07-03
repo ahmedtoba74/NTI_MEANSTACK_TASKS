@@ -1,0 +1,80 @@
+<style>
+    form {
+        max-width: 400px;
+        margin: 30px auto;
+        padding: 20px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        font-family: sans-serif;
+    }
+
+    div {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: royalblue;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: darkblue;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 10px 0;
+    }
+</style>
+
+<form action="">
+    <div>
+        <label for="name">Name</label>
+        <input
+            type="text"
+            required
+            name="name"
+            id="name"
+            pattern="^[A-Za-z\s]+$"
+        />
+    </div>
+    <hr />
+    <div>
+        <label for="age">Age</label>
+        <input type="number" required name="age" id="age" min="1" max="120" />
+    </div>
+    <hr />
+    <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+    </div>
+    <hr />
+    <input type="submit" value="Submit" />
+</form>
