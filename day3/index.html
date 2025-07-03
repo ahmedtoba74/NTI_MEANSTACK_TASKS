@@ -63,7 +63,7 @@
                     .then((res) => res.json())
                     .then((posts) => {
                         const container = document.getElementById("card");
-                        container.innerHTML = ""; // امسح الكروت القديمة
+                        container.innerHTML = "";
 
                         posts.forEach((data) => {
                             const card = renderCard(data);
