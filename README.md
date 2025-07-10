@@ -14,7 +14,13 @@ Each day has its own folder, containing the relevant tasks in HTML, CSS, and Jav
 - [Day03](day3/) – Fetch API (GET + POST) with card display
 - [Day04](day4/) – OOP with JavaScript (Encapsulation, Abstract, inheritance, polymorphism) + ES6 modules (Shapes: Rectangle, Square, Circle)
 - [Day05](day5/) – DOM Manipulation, Form Validation, and Singleton Design Pattern with TypeScript
-- `Day06/` – *(Coming soon...)*
+- [Day06](day6/) – Interactive Restaurant Menu with API integration using Forkify API, dynamic DOM rendering, modals, and responsive layout (HTML, CSS, JavaScript)
+- [Day07](day7/) – ERD & Relational Design for two database systems:  
+  - 📰 A publishing platform: journalist, department, article, visitor, comments  
+  - 🎓 A university system: faculty, department, employee, professor, student, and course enrollment
+- [Day08](day8/) – MongoDB CRUD Operations: Create, Read, Update, Delete on FacultySystemDB & FacultySystemV2 with nested documents and relational-style modeling across Student, Faculty, and Course collections
+- [Day09](day9/) – Node.js RESTful API using built-in HTTP module to handle CRUD operations on Users and Posts without Express
+- `Day10/` – *(Coming soon...)*
 
 ## 📌 Notes
 - Each task is self-contained.
