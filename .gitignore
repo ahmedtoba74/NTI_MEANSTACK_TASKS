@@ -10,3 +10,6 @@ Thumbs.db
 
 # Ignore logs
 *.log
+
+# Ignoer dist file 
+dist/
