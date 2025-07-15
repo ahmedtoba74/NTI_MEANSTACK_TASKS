@@ -20,7 +20,8 @@ Each day has its own folder, containing the relevant tasks in HTML, CSS, and Jav
   - 🎓 A university system: faculty, department, employee, professor, student, and course enrollment
 - [Day08](day8/) – MongoDB CRUD Operations: Create, Read, Update, Delete on FacultySystemDB & FacultySystemV2 with nested documents and relational-style modeling across Student, Faculty, and Course collections
 - [Day09](day9/) – Node.js RESTful API using built-in HTTP module to handle CRUD operations on Users and Posts without Express
-- `Day10/` – *(Coming soon...)*
+- [Day10](day10/) – Express.js + MongoDB API for full CRUD on Users collection, and in-memory CRUD for Posts
+- `Day11/` – *(Coming soon...)*
 
 ## 📌 Notes
 - Each task is self-contained.
