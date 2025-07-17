@@ -21,7 +21,7 @@ Each day has its own folder, containing the relevant tasks in HTML, CSS, and Jav
 - [Day08](day8/) – MongoDB CRUD Operations: Create, Read, Update, Delete on FacultySystemDB & FacultySystemV2 with nested documents and relational-style modeling across Student, Faculty, and Course collections
 - [Day09](day9/) – Node.js RESTful API using built-in HTTP module to handle CRUD operations on Users and Posts without Express
 - [Day10](day10/) – Express.js + MongoDB API for full CRUD on Users collection, and in-memory CRUD for Posts
-- [Day12] – Angular project with Hero section, responsive card grid using @for, modular components, and external repo link  
+- [Day12](day12/) – Angular project with Hero section, responsive card grid using @for, modular components, and external repo link  
 🔗 [View Angular Project](https://github.com/ahmedtoba74/NTI_DAY12_ANGULAR)
 
 - `Day13/` – *(Coming soon...)*
